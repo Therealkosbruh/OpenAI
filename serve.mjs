@@ -2,7 +2,7 @@ import express from 'express';
 import { main } from './function.mjs';
 
 const app = express();
-const port = 3002;
+const port = 80;
 
 app.use(express.json());
 
