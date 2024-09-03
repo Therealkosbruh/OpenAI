@@ -3,7 +3,7 @@ import { main } from './function.mjs';
 import {getGoogleLensData} from './serpApi.mjs'
 
 const app = express();
-const port = 3002;
+const port = 80;
 
 app.use(express.json());
 
