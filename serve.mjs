@@ -11,12 +11,13 @@ app.use(express.json());
 
 app.post('/object-recognition', async (req, res) => {
   const url = req.query.url || req.body.url;
-  if (!url) {
-    res.status(400).send({ error: 'URL not provided' });
+  const language = req.query.language || req.body.language;
+  if (!url || !language) {
+    res.status(400).send({ error: 'URL and language not provided' });
     return;
   }
   try {
-    const result = await main(url);
+    const result = await main(url, language);
     res.json({ result });
   } catch (error) {
     console.error(error);
